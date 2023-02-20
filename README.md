@@ -1,4 +1,4 @@
-# LaravelPassport
+# Socialite ATA Auth
 
 ```bash
 composer require evionica/socialite-ata-auth
