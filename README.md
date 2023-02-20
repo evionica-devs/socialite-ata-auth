@@ -1,7 +1,7 @@
 # LaravelPassport
 
 ```bash
-composer require socialiteproviders/laravelpassport
+composer require evionica/socialite-ata-auth
 ```
 
 ## Installation & Basic Usage
@@ -11,11 +11,11 @@ Please see the [Base Installation Guide](https://socialiteproviders.com/usage/),
 ### Add configuration to `config/services.php`
 
 ```php
-'laravelpassport' => [    
-  'client_id' => env('LARAVELPASSPORT_CLIENT_ID'),  
-  'client_secret' => env('LARAVELPASSPORT_CLIENT_SECRET'),  
-  'redirect' => env('LARAVELPASSPORT_REDIRECT_URI'),
-  'host' => env('LARAVELPASSPORT_HOST'),
+'ataauth' => [
+    'client_id' => env('ATAAUTH_CLIENT_ID'),
+    'client_secret' => env('ATAAUTH_CLIENT_SECRET'),
+    'redirect' => env('APP_URL').'/auth/callback',
+    'host' => env('ATAAUTH_HOST'),
 ],
 ```
 
@@ -29,7 +29,7 @@ Add the event to your `listen[]` array in `app/Providers/EventServiceProvider`. 
 protected $listen = [
     \SocialiteProviders\Manager\SocialiteWasCalled::class => [
         // ... other providers
-        \SocialiteProviders\LaravelPassport\LaravelPassportExtendSocialite::class.'@handle',
+        \Evionica\SocialiteAtaAuth\AtaAuthExtendSocialite::class.'@handle',
     ],
 ];
 ```
@@ -39,13 +39,13 @@ protected $listen = [
 You should now be able to use the provider like you would regularly use Socialite (assuming you have the facade installed):
 
 ```php
-return Socialite::driver('laravelpassport')->redirect();
+return Socialite::driver('ataauth')->redirect();
 ```
 
 ### Returned User fields
 
-- ``id``
-- ``nickname``
-- ``name``
+- ``uuid``
+- ``firstName``
+- ``lastName``
 - ``email``
-- ``avatar``
+- ``ato``
