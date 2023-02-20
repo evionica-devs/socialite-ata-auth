@@ -1,33 +1,33 @@
 {
-    "name": "socialiteproviders/laravelpassport",
-    "description": "LaravelPassport OAuth2 Provider for Laravel Socialite",
-    "license": "MIT",
-    "keywords": [
-        "laravel",
-        "oauth",
-        "passport",
-        "provider",
-        "socialite"
-    ],
-    "authors": [
-        {
-            "name": "recca0120",
-            "email": "recca0120@name.com"
-        }
-    ],
-    "support": {
-        "issues": "https://github.com/socialiteproviders/providers/issues",
-        "source": "https://github.com/socialiteproviders/providers",
-        "docs": "https://socialiteproviders.com/laravelpassport"
-    },
-    "require": {
-        "php": "^7.4 || ^8.0",
-        "ext-json": "*",
-        "socialiteproviders/manager": "~4.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "SocialiteProviders\\LaravelPassport\\": ""
-        }
+  "name": "evionica/socialite-ata-auth",
+  "description": "LaravelPassport OAuth2 Provider for ATA Auth",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "oauth",
+    "ata-auth",
+    "provider",
+    "socialite"
+  ],
+  "authors": [
+    {
+      "name": "Mateusz Gostański",
+      "email": "mateusz.gostanski@gmail.com"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/evionica-devs/socialite-ata-auth/issues",
+    "source": "https://github.com/evionica-devs/socialite-ata-auth/",
+    "docs": "https://socialiteproviders.com/laravelpassport"
+  },
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "ext-json": "*",
+    "socialiteproviders/manager": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Evionica\\SocialiteAtaAuth\\": "src"
+    }
+  }
 }
